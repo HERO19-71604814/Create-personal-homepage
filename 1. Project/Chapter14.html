@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14장 내용 활용</title>
+    <!-- 스타일 불러오기 -->
+    <link rel="stylesheet" href="./css/style14.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/jquery.masonry.min.js"></script>
+    <script src="js/jquery.imagesloaded.min.js"></script>
+    <script>
+        // 풀다운 메뉴
+        $(document).ready(function () {
+            // 풀다운 메뉴
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+        });
+
+        // 페이지
+        $(document).ready(function () {
+            // 이미지 로드 확인
+            $('#main-section').imagesLoaded(function () {
+                // jQuery Masonry 플러그인 적용
+                $('#main-section').masonry({
+                    itemSelector: '.paper',
+                    columnWidth: 230,
+                    isAnimated: true
+                });
+            });
+});
+            
+        
+        // 라이트 박스
+        $(document).ready(function () {
+            function showLightBox() {
+                // 라이트박스를 보이게 합니다.
+                $('#darken-background').show();
+                $('#darken-background').css('top', $(window).scrollTop());
+                // 스크롤을 못하게 합니다.
+                $('body').css('overflow', 'hidden');
+            }
+
+            function hideLightBox() {
+                // 라이트박스를 안 보이게 합니다.
+                $('#darken-background').hide();
+
+                // 스크롤을 하게 합니다.
+                $('body').css('overflow', '');
+            }
+
+            // 라이트박스 제거 이벤트
+            $('#darken-background').click(function () {
+                hideLightBox();
+            });
+
+                // 클릭 이벤트 연결
+            $('.paper').click(function () {
+                showLightBox();
+            });
+
+            // 라이트박스 제거 이벤트 보조
+            $('#lightbox').click(function (event) {
+                event.stopPropagation()
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 헤더 --> 
+    <header id="main-header"> 
+        
+        <div class="header-search-form"> 
+            <form action="https://www.google.com/search" method="GET"> 
+                <input name="q" type="text" class="input-search"/> 
+                <input type="submit" class="input-search-submit" value="구글 검색" /> 
+            </form> 
+        </div> 
+
+        <h1 class="header-title">Nature</h1> 
+        <div class="header-menu"> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="#">사계절 검색</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="https://www.google.co.jp/search?q=%EB%B4%84&source=hp&ei=dbuRZLmgDoWB-AaribzoAw&iflsig=AOEireoAAAAAZJHJhXyxenLL2HMt0JH4C8xllgas5q--&ved=0ahUKEwj5roaVi9L_AhWFAN4KHasEDz0Q4dUDCAs&uact=5&oq=%EB%B4%84&gs_lcp=Cgdnd3Mtd2l6EAMyCwgAEIAEELEDEIMBMggIABCABBCxAzILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMggIABCABBCxAzIFCC4QgAQyCAguEIAEELEDMhEILhCABBCxAxCDARDHARDRAzIFCAAQgAQyEQguEIAEELEDEIMBEMcBEK8BOgQIABADOgQILhADOgsILhCABBCxAxCDAVAAWPEBYOUCaABwAHgAgAFtiAHUAZIBAzAuMpgBAKABAQ&sclient=gws-wiz">봄</a></li> 
+                        <li><a href="https://www.google.co.jp/search?q=%EC%97%AC%EB%A6%84&ei=druRZL2CLo-I-QayhIbIAw&ved=0ahUKEwi9leOVi9L_AhUPRN4KHTKCATkQ4dUDCA8&uact=5&oq=%EC%97%AC%EB%A6%84&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQigUQQzIHCC4QigUQQzIHCAAQigUQQzIFCAAQgAQyCwgAEIAEELEDEIMBMgcIABCKBRBDMgsIABCABBCxAxCDATILCC4QgAQQsQMQgwEyCwgAEIAEELEDEIMBMgsIABCABBCxAxCDAToKCAAQRxDWBBCwAzoZCAAQigUQ6gIQtAIQigMQtwMQ1AMQ5QIYAToICAAQgAQQsQM6BAgAEANKBAhBGABQoQZY0gtg6QxoBHABeAGAAcgBiAHiBJIBBTAuNC4xmAEAoAEBsAEJwAEByAEK2gEECAEYBw&sclient=gws-wiz-serp">여름</a></li> 
+                        <li><a href="https://www.google.co.jp/search?q=%EA%B0%80%EC%9D%84&ei=gruRZNnsHdDChwOj26qAAw&ved=0ahUKEwjZta-bi9L_AhVQ4WEKHaOtCjAQ4dUDCA8&uact=5&oq=%EA%B0%80%EC%9D%84&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECAAQAzILCAAQgAQQsQMQgwEyCwguEIAEELEDEIMBMgQIABADMggILhDUAhCABDILCAAQgAQQsQMQgwEyCwgAEIAEELEDEIMBMgUIABCABDIFCC4QgAQyCwgAEIAEELEDEIMBOgoIABBHENYEELADOhkIABCKBRDqAhC0AhCKAxC3AxDUAxDlAhgBOhkILhCKBRDqAhC0AhCKAxC3AxDUAxDlAhgBOgQILhADOg4ILhCABBCxAxCDARDUAjoZCC4QgAQQsQMQgwEQlwUQ3AQQ3gQQ3wQYAkoECEEYAFD8CFiGD2DgD2gGcAF4AIABbogBnwOSAQMxLjOYAQCgAQGwAQrAAQHIAQraAQQIARgH2gEGCAIQARgU&sclient=gws-wiz-serp">가을</a></li> 
+                        <li><a href="https://www.google.co.jp/search?q=%EA%B2%A8%EC%9A%B8&ei=jruRZPPqHZf3-Qbu-Ka4DQ&ved=0ahUKEwjz6Yuhi9L_AhWXe94KHW68CdcQ4dUDCA8&uact=5&oq=%EA%B2%A8%EC%9A%B8&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIHCAAQigUQQzIHCAAQigUQQzIFCAAQgAQyCAguEIAEENQCMgcIABCKBRBDMg4ILhCABBCxAxCDARDUAjIFCC4QgAQyBQgAEIAEMgcILhCKBRBDMgUIABCABDoKCAAQRxDWBBCwAzoECAAQAzoLCAAQgAQQsQMQgwE6CwguEIAEELEDEIMBOhUILhCKBRBDEJcFENwEEN4EEN8EGAE6GQguEIoFEOoCELQCEIoDELcDENQDEOUCGAI6GQgAEIoFEOoCELQCEIoDELcDENQDEOUCGAI6EQguEIAEELEDEIMBEMcBENEDOggILhCABBCxAzoICAAQgAQQsQM6EwguEIAEEJcFENwEEN4EEOAEGAFKBAhBGABQwwRY6wpg5QtoA3ABeACAAXOIAZQFkgEDMC42mAEAoAEBsAEIwAEByAEK2gEGCAEQARgU2gEECAIYBw&sclient=gws-wiz-serp">겨울</a></li> 
+                        <li><a href="https://www.google.co.jp/search?q=%EC%82%AC%EA%B3%84%EC%A0%88&ei=m7uRZL3OG8jzhwPS5KOQAw&ved=0ahUKEwj9h6Oni9L_AhXI-WEKHVLyCDIQ4dUDCA8&uact=5&oq=%EC%82%AC%EA%B3%84%EC%A0%88&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgsILhCABBDHARDRAzIFCAAQgAQ6CggAEEcQ1gQQsAM6GQgAEIoFEOoCELQCEIoDELcDENQDEOUCGAE6EQguEIAEELEDEIMBEMcBENEDOgQILhADOgQIABADOgsIABCABBCxAxCDAToOCC4QxwEQsQMQ0QMQgAQ6CwguEIAEELEDEIMBOh8ILhCABBCxAxCDARDHARDRAxCXBRDcBBDeBBDgBBgCOggILhCABBCxAzoICAAQgAQQsQM6BwgAEIoFEEM6DgguEIAEELEDEIMBENQCSgQIQRgAUPEEWMMRYPcSaARwAXgBgAGbAYgBwgeSAQMwLjiYAQCgAQGwAQrAAQHIAQraAQQIARgH2gEGCAIQARgU&sclient=gws-wiz-serp">사계절</a></li> 
+                        <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%8C%80%EC%A0%84%EC%84%9C%EA%B5%AC+%EB%8F%84%EB%A7%88%EB%8F%99+%EB%82%A0%EC%94%A8">날씨</a></li> 
+                    </ul> 
+                </li> 
+            </ul> 
+            <ul class="outer-menu"> 
+                <li> 
+                    <a href="https://www.google.co.jp/search?q=24%EC%A0%88%EA%B8%B0&ei=p7uRZIvPLciC-Qag36XoDg&ved=0ahUKEwjLvpGti9L_AhVIQd4KHaBvCe0Q4dUDCA8&uact=5&oq=24%EC%A0%88%EA%B8%B0&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzILCAAQgAQQsQMQgwEyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6CggAEEcQ1gQQsAM6EQguEIAEELEDEIMBEMcBENEDOgsILhCABBCxAxCDAToICAAQgAQQsQM6BQguEIAEOh8ILhCABBCxAxCDARDHARDRAxCXBRDcBBDeBBDgBBgBOggILhCABBCxAzoOCC4QgAQQsQMQgwEQ1AJKBAhBGABQ2wVYjgtg3QxoA3ABeAGAAXGIAfoFkgEDMC43mAEAoAEBwAEByAEK2gEGCAEQARgU&sclient=gws-wiz-serp">24절기</a> 
+                    <ul class="inner-menu"> 
+                        <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjE5&qvt=0&query=%EB%B4%84%20%EC%A0%88%EA%B8%B0">봄 절기</a></li> 
+                        <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjE5&qvt=0&query=%EC%97%AC%EB%A6%84%20%EC%A0%88%EA%B8%B0">여름 절기</a></li> 
+                        <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjE5&qvt=0&query=%EA%B0%80%EC%9D%84%20%EC%A0%88%EA%B8%B0">가을 절기</a></li> 
+                        <li><a href="https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&mra=bjE5&qvt=0&query=%EA%B2%A8%EC%9A%B8%20%EC%A0%88%EA%B8%B0">겨울 절기</a></li> 
+                    </ul> 
+                </li> 
+            </ul> 
+        </div> 
+    </header> 
+
+    <!-- 네비게이션 메뉴 --> 
+    <nav id="main-navigation"> 
+        <ul> 
+            <li><a href="https://namu.wiki/w/%EB%B4%84">봄</a></li> 
+            <li><a href="https://namu.wiki/w/%EC%97%AC%EB%A6%84">여름</a></li> 
+            <li><a href="https://namu.wiki/w/%EA%B0%80%EC%9D%84">가을</a></li> 
+            <li><a href="https://namu.wiki/w/%EA%B2%A8%EC%9A%B8">겨울</a></li> 
+            <li><a href="https://namu.wiki/w/%EA%B3%84%EC%A0%88?from=%EC%82%AC%EA%B3%84%EC%A0%88">사계/사계절</a></li> 
+        </ul> 
+    </nav> 
+
+    <!-- 본문 영역 --> 
+    <section id="main-section">     
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="https://cdn.pixabay.com/photo/2016/02/27/06/43/cherry-blossom-tree-1225186_1280.jpg" /></a> 
+            </div> 
+            <p class="paper-description">봄</p> 
+            <div class="paper-content"> 
+                <a class="paper-link" href="#"><img src="./images/30x30.jpg" /></a> 
+                <p class="paper-text">동지에 태양의 남중고도가 최저점에 도달한 이후 다시 점점 올라가기 시작하여 기온이 따뜻해지기 시작하는 시기이다. 일반적으로 3월~5월, 음력으로는 2월~4월에 해당하는 사계절의 첫번째 계절.</p> 
+            </div> 
+        </div> 
+            
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="https://cdn.pixabay.com/photo/2015/11/02/18/32/water-1018808_1280.jpg" /></a> 
+            </div> 
+            <p class="paper-description">여름</p> 
+            <div class="paper-content"> 
+                <a class="paper-link" href="#"><img src="./images/30x30.jpg" /></a> 
+                <p class="paper-text">일반적으로 6~8월에 해당하는 1년 4계절의 두 번째 계절로서, 태양의 남중 고도가 가장 높아 기온이 가장 높은 계절이다.</p> 
+            </div> 
+        </div> 
+            
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_1280.jpg" /></a> 
+            </div> 
+            <p class="paper-description">가을</p> 
+            <div class="paper-content"> 
+                <a class="paper-link" href="#"><img src="./images/30x30.jpg" /></a> 
+                <p class="paper-text">일반적으로 9~11월에 해당하는 1년 4계절의 세번째 계절. 1년 하반기의 한창일 무렵이다. 다만 2010년대 이후 기상학적으로 한국에서의 9월은 20도를 넘는 지역이 많아 9월은 늦여름, 즉 여름의 끝자락으로 보기도 한다.</p> 
+            </div> 
+        </div>
+
+        <div class="paper"> 
+            <div class="paper-holder"> 
+                <a><img width="190" src="https://cdn.pixabay.com/photo/2017/01/14/12/59/iceland-1979445_1280.jpg" /></a> 
+            </div> 
+            <p class="paper-description">겨울</p> 
+            <div class="paper-content"> 
+                <a class="paper-link" href="#"><img src="./images/30x30.jpg" /></a> 
+                <p class="paper-text">일반적으로 12~2월에 해당하는 1년 4계절의 마지막 네 번째 계절로서, 태양의 남중 고도가 가장 낮아 기온이 가장 낮은 계절이다. </p> 
+            </div> 
+        </div>     
+            
+    </section> 
+
+    <!-- 라이트박스 --> 
+    <div id="darken-background"> 
+        <div id="lightbox"> 
+            <div class="user-information"> 
+                <a class="user-information-image" href="#">
+                    <img src="./images/70x70.jpg" />
+                </a> 
+                <div class="user-information-text">
+                    <h3>사계</h3>
+                    <p>4개의 계절, 즉 사계절을 일컫는 말. 봄, 여름, 가을, 겨울을 뜻한다.</p>
+                </div> 
+            </div>
+            <hr class="lightbox-splitter" />
+            <img src="./images/600x750.jpg" /> 
+        </div> 
+    </div>     
+</body>
+</html> 

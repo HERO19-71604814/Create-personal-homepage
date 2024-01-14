@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 효과 확인</title>
+
+    <!-- 본문에서는 다루지 않은 코드입니다. 부록 A에서 살펴보는 플러그인입니다. -->
+    <!--  구 버전의 인터넷 익스플로러에서 HTML5 태그를 인식하게 합니다. -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- 스타일 불러오기 -->
+    <link rel="stylesheet" href="./css/style12.css">
+
+    <!-- xeicon사용하기 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- xeicon 내부 파일 -->
+    <!-- <link rel="stylesheet" href="./xeicon/xeicon.min.css"> -->
+
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var width = $('[data-role="slider"]').attr('data-width');
+            var height = $('[data-role="slider"]').attr('data-height');
+            var count = $('[data-role="slider"] div.item').length;
+            
+            // 스타일을 적용합니다.
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+            // 변수를 선언합니다.
+            var currentPage = 0;
+            var changePage = function () {
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+            // 이벤트를 연결합니다.
+            $('#left-button').click(function () {
+                if (currentPage > 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                }
+            });
+            $('#right-button').click(function () {
+                if (currentPage < count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                }
+            });
+        });
+    </script>
+
+    <!-- 원형 링크 -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.tagsphere.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $('#ts1').tagcloud({centrex:250, centrey:250, init_motion_x:10, init_motion_y:10});
+        $('#ts2').tagcloud({centrex:175, centrey:175, min_font_size:10, max_font_size:16, zoom:100});
+    });
+    </script>
+ 
+    <style type="text/css">
+    body {font-family:dotum, sans-serif;}
+    #ts1 li a{
+		font-family:dotum;
+        text-decoration:none;
+        color:white;
+    }
+    ul {list-style-type:none;}
+    </style>
+
+    
+</head>
+
+<body>
+    <header id="main_header">
+        <h1>여러 효과 적용하기</h1>
+    </header>
+    <nav id="main_gnb">
+        <ul class="left">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./Chapter13.html">개인 노트북 페이지</a></li>
+            <li><a href="./Chapter14.html">계절 안내 페이지</a></li>    
+        </ul>
+        <!-- <ul class="right">
+            <li><a href="#">Button</a></li>
+            <li><a href="#">Button</a></li>
+        </ul> -->
+    </nav>
+    <div id="wrap">
+        <nav id="main_lnb">
+            <ul>
+                <h1>배재대 북마크</h1>
+                <li><a href="https://www.pcu.ac.kr/kor">배재대학교</a></li>
+                <li><a href="https://course.pcu.ac.kr/">배재대 LMS</a></li>
+                <li><a href="https://www.pcu.ac.kr/kor/contents/119">배재대 복지 시설</a></li>
+                <li><a href="https://nasum.pcu.ac.kr/">배재대 나섬</a></li>
+            </ul>
+        </nav>
+        <div id="content_wrap">
+            <div id="content">
+                <article>
+                    <h1>1. <i class="xi-tv"></i> 갤러리</h1><br>
+                    <div data-role="slider" data-width="500" data-height="300">
+                        <div class="container">
+                            <div class="item">
+                                <!-- <h1>Proin in urna turpis.</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur </p> -->
+                            </div>
+                            <div class="item">
+                                <!-- <h1>Proin in urna turpis.</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur </p> -->
+                            </div>
+                            <div class="item">
+                                <!-- <h1>Duis malesuada lorem neque.</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <button id="left-button">← 왼쪽</button>
+                    <button id="right-button">오른쪽 →</button>       
+                </article>
+                <article>
+                    <h1>2. 링크버튼 <i class="xi-globus"></i> 지구본 <i class="xi-globus"></i> </h1><br>
+                    <div id="ts1" style="width:500px; height:500px; background-image: url(./images/500x500.jpg); background-size:cover;">
+                        <ul>
+                        <li><a href="./index.html" style="color:blue;" rel="20">메인 화면</a></li>
+                        <li><a href="https://www.pcu.ac.kr/kor" rel="15">배재대학교</a></li>
+                        <li><a href="./Chapter13.html" style="color:aqua" rel="50">개인 노트북 페이지</a></li>
+                        <li><a href="https://prod.danawa.com/list/?cate=112758" rel="15">다나와</a></li>
+                        <li><a href="./Chapter14.html" style="color:slateblue" rel="20">계절 안내 페이지</a></li>
+                        <li><a href="https://namu.wiki/w/%EA%B3%84%EC%A0%88?from=%EC%82%AC%EA%B3%84%EC%A0%88" rel="15">사계절</a></li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <h1>3. <i class="xi-image"></i> 이미지에 다가가면 글자가 보이는 효과</h1><br>
+                    <style>
+                        /* 본 소스는 %(퍼센트)로 되어있기 때문에 반응형에 적용할 수 있습니다 */
+                        * {margin:0;padding:0;}
+                        .bannner {position:relative;display:inline-block;}
+                        .bannner img {max-width:100%;}
+                        .bannner span.text {position:absolute;top:50%;left:0;transform:translateY(-50%);display:none;width:100%;font-size:70px;color:#fff;font-weight:900;text-align:center;}
+                        .bannner::before, .bannner::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:all .8s;-webkit-transition:all .8s;}
+                        .bannner::before {width:97%;height:95%;border-top:2px solid #fff;border-bottom:2px solid #fff;width:0;} /* 보더의 두께가 있기 때문에 요소의 크기에 계산해 줘야 합니다 */
+                        .bannner::after {width:97%;height:95%;border-left:2px solid #fff;border-right:2px solid #fff;height:0;} /* 보더의 두께가 있기 때문에 요소의 크기에 계산해 줘야 합니다 */
+                        
+                        /* 마우스가 올라가면 반응하는 소스 */
+                        .bannner:hover span.text {display:block;}
+                        .bannner:hover::before {width:calc(97% + 4px);} /* 화면에 따라서 정확한 사각형을 위한 값을 줘야하는 부분 */
+                        .bannner:hover::after {height:calc(95% + 4px);} /* 보더의 두께값을 더해줘서 정확한 모서리를 만들기 위해 calc값을 사용했습니다 */
+                        </style>
+                        <a href="https://www.google.com/search?q=%EC%9D%80%ED%95%98%EC%88%98&oq=dmsgktn&aqs=chrome.1.69i57j0i131i433i512j0i512l8.1495j0j7&sourceid=chrome&ie=UTF-8">
+                        <div class="bannner">
+                                <img src="./images/milky-way-gbef2ab1dd_640.jpg">
+                                <span class="text">은하수</span>
+                        </div>
+                        </a>
+                </article>
+                <article>
+                    <h1>4. <i class="xi-movie xi-fw"></i> 영상 <i class="xi-movie xi-fw"></i> </h1><br> 
+                    <video controls>                      
+                        <source src="./video/worm_hole_-_6797 (360p).mp4" type="video/mp4">
+                    </video>    
+                </article>
+            </div>
+        </div>
+    </div>
+    <footer id="main_footer">
+        <h3>여러 효과 적용 하기</h3>
+        <address></address>
+    </footer>    
+</body>
+</html>
