@@ -1,7 +1,7 @@
 <!-- # 프로젝트 이름 # -->
 # 📚 프로젝트: [개인 홈페이지 제작](https://1761040computerleeyoungung.netlify.app/)
 <div align="center">
-  <img src="2. Project 문서/image/project.png">
+  <img src="2. Project 문서/image/pngegg.png">
 </div>
 </br>
 
@@ -170,59 +170,6 @@
 # 💻 화면 구성
 <div align="center">
 
-<table>
-	<th style="text-align:center">🏠 메인 페이지</th>
-	<tr>
-	    <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/메인 페이지.png"></td>
-	</tr>
-</table>
-<br>
-
-<table>
-	<th style="text-align:center">🗺 여행 지도 페이지</th>
-	<tr>
-	    <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/여행 지도.png"></td>
-	</tr>
-</table>
-<br>
-
-<table>
-	<th style="text-align:center">📅 여행 달력 페이지</th>
-	<tr>
-	    <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/여행 달력.png"></td>
-	</tr>
-</table>
-<br>
-
-<table style="text-align:center">
-    <thead>
-        <tr>
-            <th colspan=2 style="text-align:center">🏨 여행 상품 페이지</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td width="25%">1. 여행 상품 목록 페이지</td>
-            <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/숙소 목록.png"></td>
-        </tr>
-        <tr>
-            <td>2. 숙소 예약 페이지</td>
-            <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/숙소 예약.png"></td>
-        </tr>
-        <tr>
-            <td>3. 숙소 예약 목록 페이지</td>
-            <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/에약 목록.png"></td>
-        </tr>
-        <tr>
-            <td>4. 숙소 결제 페이지</td>
-            <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/숙소 결제.png"></td>
-        </tr>
-        <tr>
-            <td>5. 숙소 결제 완료 페이지</td>
-            <td><img src="2. project 문서/image/9. 포트폴리오 (팀명 - 컴딱지 둘기들)(프로젝트 - Viva la Fiesta!!)Final/결제 완료.png"></td>
-        </tr>
-    </tbody>
-</table>
 </div>
 <br>
 
