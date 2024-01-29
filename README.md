@@ -1,7 +1,7 @@
 <!-- # 프로젝트 이름 # -->
 # 📚 프로젝트: [개인 홈페이지 제작](https://1761040computerleeyoungung.netlify.app/)
 <div align="center">
-  <img src="2. Project 문서/image/pngegg.png">
+  <img src="2. Project 문서/image/project.png">
 </div>
 </br>
 
