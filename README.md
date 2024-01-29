@@ -1,7 +1,7 @@
 <!-- # 프로젝트 이름 # -->
 # 📚 프로젝트: [개인 홈페이지 제작](https://1761040computerleeyoungung.netlify.app/)
 <div align="center">
-  <img src="2. project 문서/image/Project.png">
+  <img src="2. Project 문서/image/project.png">
 </div>
 </br>
 
@@ -30,7 +30,6 @@
 
 <!-- 7. 개선 사항 -->
 [🔨개선 사항🔧](#-개선-사항-)
-
 <br> 
 
 <!-- 1. 프로젝트 소개 -->
@@ -159,7 +158,7 @@
             <th>코드 파일</th>
             <td>
  
-프론트 엔드: [코드 파일](https://github.com/HERO19-71604814/Festival-website-project/tree/aa33cabe11e2c78e344a61fb517d9ee2ea2d38d6/1.%20project%20file/Back/festival)<br>
+프론트 엔드: [코드 파일](https://github.com/HERO19-71604814/Create-personal-homepage/tree/8221bbdfc74073e8cb56d32bc1da81a2b69ea413/1.%20Project%20File)<br>
             </td>
         </tr>
     </tbody>
